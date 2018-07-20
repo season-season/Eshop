@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="usermaster.master.cs" Inherits="usermaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Arts & Crafts</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+
+</head>
+<body>
+<!-- Shell -->
+<form id="f1" runat="server">
+<div class="shell">
+  <!-- Header -->
+  <div id="header">
+    
+    
+    <!-- Navigation -->
+    <div id="navigation">
+      <ul>
+           <li><h1><a href="home.aspx" >Arts & Crafts Shop</a></h1></li>
+        <li><a href="home.aspx" >Home</a></li>
+          <li><a href="myaccount.aspx">My account</a></li>
+          <li><a href="product.aspx">About</a></li>
+          <li><a href="signup.aspx">Sign Up</a></li>
+         
+
+          <%
+              if (Session["user"] == null)
+              {
+              %>
+          <li><a href="userlogin.aspx">Login</a></li>
+          <%
+              }
+              else{
+              
+                  %>
+          <li><a href="userlogout.aspx">Logout</a></li>
+          <%
+              }
+              
+              
+              
+              
+               %>
+
+         <li><a href="viewcart.aspx">Shopping Cart</a></li>
+        
+      </ul>
+    </div>
+    <!-- End Navigation -->
+  </div>
+  <!-- End Header -->
+  <!-- Main -->
+  <div id="main">
+    <div class="cl">&nbsp;</div>
+    <!-- Content -->
+    <div id="content">
+      
+      <div class="products">
+        <asp:ContentPlaceHolder ID="c1" runat="server"></asp:ContentPlaceHolder></div>
+        
+   <div id="sidebar">
+      <!-- Search -->
+     
+        
+        
+        </div>
+      <!-- End Categories -->
+    
+    
+
+          
+           <!-- End Content -->
+    <!-- Sidebar -->
+      <!-- End Search -->
+      <!-- Categories -->
+     <!-- End Sidebar -->
+    
+        <div class="cl">&nbsp;</div>
+  </div>
+  <!-- End Main -->
+  <!-- Side Full -->
+    
+     
+     
+      <div class="cl">&nbsp;</div>
+    </div>
+    <!-- End Text Cols -->
+  </div>
+  <!-- End Side Full -->
+  <!-- Footer -->
+  <div id="footer">
+    
+  
+  </div>
+  <!-- End Footer -->
+</div>
+<!-- End Shell --></form>
+</body>
+</html>
